@@ -11,5 +11,4 @@ This folder contains exercises focused on decision-making flow control in Python
 
 #Solved Problems
 
-* **check_voting_age.py**: Validates if a user is legally allowed to vote based on their age.
-* **tax_calculator.py**: Calculates income tax brackets based on monthly salary inputs.
+
