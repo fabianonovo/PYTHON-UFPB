@@ -1,0 +1,26 @@
+"""
+Algorithm to calculate the highest and lowest value
+Author: Novo
+course: conditional-structures (python)
+"""
+print("Algorithm to calculate the highest and lowest value")
+
+#input
+a = float(input("input the first value"))
+b = float(input("input the second value""))
+c = float(input("input the last one value"))
+d = "same values"
+if a > b > c:
+    d = "{a} > {b} > {c}"
+elif b > c > a:
+    d = "{b} > {c} > {a}"    
+elif c > a > d:
+    d = "{c} > {a} > {d}"
+elif c > b > a:
+    d = "{c} > {b} > {a}"
+elif a > c > b:
+    d = "{a} > {c} > {b}"
+elif d > a > c:
+    d = "{d} > {a} > {c}"
+print(f"{d}")
+
