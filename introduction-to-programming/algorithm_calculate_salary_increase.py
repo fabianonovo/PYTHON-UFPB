@@ -1,7 +1,7 @@
 """
 Algorithm to calculate salary increase
 Author: Novo
-course: conditional-structures (python)
+course: introduction to programming (python)
 """
 print("Algorithm to calculate salary increase")
 
