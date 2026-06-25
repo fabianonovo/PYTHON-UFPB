@@ -1,10 +1,18 @@
 # PYTHON-UFPB
-python-exercises
 
-Repository Structure
+Repository of Python exercises from UFPB courses. Organized by topics and difficulty levels.
 
-* **`introduction-to-programming/`**: Basic syntax, variables, and loops.
-* **`data-structures/`**: Projects using lists, dictionaries, tuples, and matrices.
-* **`data-science/`**: Data analysis and Artificial Intelligence assignments.
+## 📚 Repository Structure
 
- Python3
+### Implemented Modules
+* **`introduction-to-programming/`**: Basic syntax, input/output, and variable manipulation.
+* **`conditional-structures/`**: Decision-making with if/else statements and logical operators.
+
+### Upcoming Modules
+* **`loops/`**: For and while loops, iterations, and control flow.
+* **`functions/`**: Function definition, parameters, return values, and scope.
+* **`data-structures/`**: Lists, dictionaries, tuples, and matrices.
+* **`data-science/`**: Data analysis and basic AI assignments.
+
+## 🛠️ Technologies
+- **Python 3**
