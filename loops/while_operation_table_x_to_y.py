@@ -19,26 +19,17 @@ if op_signal not in ('+', '*', '-', '/'):
 elif y <= 0:
     print("y must be greater than 0.")
 else:
-    if op_signal == '+':
-        while z < y:
-            z = z + 1
+    while z < y:
+        z += 1
+        if op_signal == '+':
             k = x + z
-            print(f"{x} + {z} == {k}")
-    elif op_signal == '-':
-        while z < y:
-            z = z + 1
+        elif op_signal == '-':
             k = x - z
-            print(f"{x} - {z} == {k}")
-    elif op_signal == '*':
-        while z < y:
-            z = z + 1
+        elif op_signal == '*':
             k = x * z
-            print(f"{x} * {z} == {k:f}")
-    elif op_signal == '/':
-        while z < y:
-            z = z + 1
+        elif op_signal == '/':
             k = x / z
-            print(f"{x} / {z} == {k:f}")
+        print(f"{x} {op_signal} {z} == {k:.6f}")
 
 print("End")
 
