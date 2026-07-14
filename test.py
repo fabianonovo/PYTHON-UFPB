@@ -1,36 +1,58 @@
 """
-Algorithm: compound interest calculator with monthly deposit
-Author: Novo
+Debt interest calculator over time
+Author: Fabiano
+Course: loops (Python)
 """
 
-print("Compound interest calculator")
-
 # input
-principal = float(input("Enter the initial principal amount: "))
-monthly_deposit = float(input("Enter the monthly deposit amount: "))
-interest_rate = float(input("Enter the interest rate (percentage): "))
-months = int(input("Enter the number of months: "))
+debt = float(input("Enter the amount of your debt in '$': "))
+interest_rate = float(
+    input("Enter the monthly interest rate for the debt (percentage): ")
+)
+months = int(
+    input("Enter the number of months you plan to pay the debt: ")
+)
+monthly_payment = float(
+    input("Enter the amount you will pay monthly: ")
+)
+
+initial_debt = debt
 month = 0
+total_interest = 0.0
+total_paid = 0.0
 
 # process and output
-while month < months:
+while month < months and debt > 0:
+    previous_debt = debt
+
+    # apply monthly payment then interest (payment at start of period)
+    debt -= monthly_payment
+    interest = debt * (interest_rate / 100)
+    debt += interest
+
     month += 1
-    previous_balance = principal
-    interest_factor = 1 + interest_rate / 100
-    principal *= interest_factor
-    principal += monthly_deposit
+    total_paid += monthly_payment
+    total_interest += interest
 
-    print(f"These are your results after {month} month(s)")
-    print(f"Total accumulated amount: {principal - monthly_deposit:.2f}$")
-    print(
-        f"Monthly interest earned: "
-        f"{(principal - monthly_deposit) - previous_balance:.2f}$"
-    )
-    print(f"Monthly deposit amount: {monthly_deposit:.2f}$")
-    print(
-        "New balance after fixed deposit at the end of the month "
-        f"({monthly_deposit:.2f}$): {principal:.2f}$"
-    )
-    print()
+    print(f"\n===== MONTH {month} =====")
+    print(f"Starting debt:         {previous_debt:.2f}$")
+    print(f"Monthly interest:      {interest:.2f}$")
+    print(f"Debt after interest:   {previous_debt - monthly_payment + interest:.2f}$")
+    print(f"Payment:              -{monthly_payment:.2f}$")
+    print(f"Remaining debt:        {debt:.2f}$")
 
-print("End")
+    if debt > initial_debt:
+        print("WARNING: the debt is increasing.")
+
+if debt <= 0:
+    print("Congratulations! Your debt has been paid off.")
+    print(f"Months used: {month}")
+    print(f"Total paid: {total_paid:.2f}$")
+    print(f"Total interest paid: {total_interest:.2f}$")
+    print(f"Extra amount paid: {abs(debt):.2f}$")
+else:
+    print("The term ended and the debt was not paid off.")
+    print(f"Remaining debt: {debt:.2f}$")
+    print(f"Months used: {month}")
+    print(f"Total paid: {total_paid:.2f}$")
+    print(f"Total interest paid: {total_interest:.2f}$")
